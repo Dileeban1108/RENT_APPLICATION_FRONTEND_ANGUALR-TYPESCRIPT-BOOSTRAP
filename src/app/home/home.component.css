@@ -1,0 +1,45 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20px;
+  background: linear-gradient(to right, #1f4037, #99f2c8); /* Modern gradient background */
+  color: #ffffff; /* White text for contrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 3rem; /* Large heading for emphasis */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff6b6b; /* Modern coral color for heading */
+}
+
+.home-container p {
+  font-size: 1.25rem; /* Slightly larger paragraph text for readability */
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #f7f7f7; /* Light grey color for paragraph */
+  max-width: 600px; /* Limit the width for better readability */
+}
+
+.home-container a {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1f4037;
+  background-color: #ff6b6b; /* Matching button color with the heading */
+  border: none;
+  border-radius: 30px; /* Rounded button for a modern look */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.home-container a:hover {
+  background-color: #f53b57; /* Slightly darker coral on hover */
+}

@@ -1,0 +1,9 @@
+<!-- vehicles.component.html -->
+<div class="vehicle-container">
+  <div *ngFor="let vehicle of filteredVehicles" class="vehicle-card">
+    <p>{{ vehicle.type }}</p>
+    <img [src]="vehicle.img" alt="{{ vehicle.type }}" class="vehicleImg" />
+    <p>{{ vehicle.price }} per {{ vehicle.duration }}</p>
+    <button (click)="onSelectVehicle(vehicle.type)">See More</button>
+  </div>
+</div>

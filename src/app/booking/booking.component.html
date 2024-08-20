@@ -1,0 +1,18 @@
+<div class="main-boking-container">
+  <div class="booking-container">
+    <h2>Book Your {{ vehicleType }}</h2>
+    <form>
+      <label>
+        Location:
+        <input type="text" [(ngModel)]="location" name="location" />
+      </label>
+      <label>
+        Duration (hours):
+        <input type="number" [(ngModel)]="duration" name="duration" />
+      </label>
+      <button (click)="onSearch()">Calculate Price</button>
+      <p>Total Price: ${{ totalPrice }}</p>
+      <button (click)="onConfirm()">Confirm Booking</button>
+    </form>
+  </div>
+</div>

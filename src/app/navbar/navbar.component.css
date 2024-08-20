@@ -1,0 +1,50 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #1f4037; /* Dark green background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #99f2c8; /* Light green hover effect */
+}
+
+nav a.active {
+  color: #ff6b6b; /* Coral color for active link */
+}
+
+nav .logo {
+  margin-right: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Optional: Adjust spacing on smaller screens */
+@media (max-width: 768px) {
+
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  nav .logo {
+    margin-bottom: 10px;
+  }
+}
