@@ -6,13 +6,25 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [RouterOutlet,HomeComponent,VehiclesComponent,RentPageComponent,FooterComponent,NavbarComponent,CommonModule],
+  styleUrls: ['./app.component.css'],
+  imports: [
+    RouterOutlet,
+    HomeComponent,
+    VehiclesComponent,
+    RentPageComponent,
+    FooterComponent,
+    NavbarComponent,
+    CommonModule,
+    LoginComponent,
+    SignupComponent
+  ],
 })
 export class AppComponent {
   isRentPageVisible = false;

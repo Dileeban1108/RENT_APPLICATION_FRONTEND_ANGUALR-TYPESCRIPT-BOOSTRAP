@@ -10,7 +10,4 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 export class HomeComponent {
   @ViewChild('vehiclesSection') vehiclesSection!: ElementRef;
 
-  scrollToVehicles() {
-    this.vehiclesSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
-  }
 }

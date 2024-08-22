@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { AuthService } from '../auth.service';
 interface VehicleImage {
   type: string;
   img: string;
@@ -28,7 +28,7 @@ export class RentPageComponent implements OnInit {
 
   filteredImages: VehicleImage[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router,private authService: AuthService) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -48,11 +48,12 @@ export class RentPageComponent implements OnInit {
   }
 
   onRentNow(vehicle: VehicleImage) {
-    this.router.navigate(['/booking'], {
-      queryParams: {
-        type: vehicle.type,
-        price: vehicle.price
-      }
-    });
+    if (this.authService.isLoggedIn()) {
+      // Navigate to the rent page with the vehicle type
+      this.router.navigate(['/booking'], { queryParams: { type: vehicle } });
+    } else {
+      // Redirect to the login page
+      this.router.navigate(['/login']);
+    }
   }
 }

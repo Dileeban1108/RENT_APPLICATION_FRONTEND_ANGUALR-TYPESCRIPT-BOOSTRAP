@@ -1,0 +1,57 @@
+<div class="main-login-container">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Enter your email"
+          />
+          <div
+            *ngIf="
+              loginForm.controls['email'].invalid &&
+              loginForm.controls['email'].touched
+            "
+          >
+            <small class="error">Please enter a valid email</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+          <div
+            *ngIf="
+              loginForm.controls['password'].invalid &&
+              loginForm.controls['password'].touched
+            "
+          >
+            <small class="error">Password is required</small>
+          </div>
+        </div>
+  
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+        <div *ngIf="message" [ngClass]="{'message': true, 'success': message.includes('success'), 'error': message.includes('error')}">
+          {{ message }}
+        </div>
+      </form>
+      <p>Don't have an account? <a href="/signup">Sign up here</a></p>
+    </div>
+  </div>
+  
