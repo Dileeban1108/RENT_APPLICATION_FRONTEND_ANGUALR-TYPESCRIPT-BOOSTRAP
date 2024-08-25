@@ -49,11 +49,13 @@ export class RentPageComponent implements OnInit {
 
   onRentNow(vehicle: VehicleImage) {
     if (this.authService.isLoggedIn()) {
-      // Navigate to the rent page with the vehicle type
-      this.router.navigate(['/booking'], { queryParams: { type: vehicle } });
+      // Navigate to the booking page with the vehicle type and location
+      this.router.navigate(['/booking'], { queryParams: { type: vehicle.type, location: vehicle.location, price: vehicle.price } });
     } else {
       // Redirect to the login page
       this.router.navigate(['/login']);
     }
   }
+  
+  
 }

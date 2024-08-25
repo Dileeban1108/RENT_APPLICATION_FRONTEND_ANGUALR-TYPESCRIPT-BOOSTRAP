@@ -12,6 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   register(user: any): Observable<any> {
+    console.log(user);
     return this.http.post<any>(`${this.apiUrl}`, user);
   }
 
@@ -29,4 +30,8 @@ export class UserService {
   logout(): void {
     localStorage.removeItem('authToken');
   }
+  confirmBook(credentials: { vehicleType: string, location: string, duration: string, totalPrice: number }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/bookVehicle`, credentials);
+}
+
 }

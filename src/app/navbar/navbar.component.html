@@ -1,6 +1,7 @@
 <nav>
   <a href="/" routerLinkActive="active">Home</a>
   <a href="/vehicles">View Vehicles</a>
-  <a href="/login" routerLinkActive="active">Get Start</a>
+  <a *ngIf="!authService.isLoggedIn()" href="/login" routerLinkActive="active">Get Started</a>
+  <a *ngIf="authService.isLoggedIn()" href="#" (click)="logout()">Logout</a>
   <a href="/contact" routerLinkActive="active">Contact Us</a>
 </nav>
